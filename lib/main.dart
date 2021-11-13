@@ -141,28 +141,28 @@ class _MyAppState extends State<MyApp> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
+
                 if (_supportState == _SupportState.unknown)
                   const CircularProgressIndicator()
                 else if (_supportState == _SupportState.supported)
                   const Text("This device is supported")
                 else
                   const Text("This device is not supported"),
-                
+
                 const Divider(height: 100),
                 Text('Can check biometrics: $_canCheckBiometrics\n'),
                 ElevatedButton(
                   child: const Text('Check biometrics'),
                   onPressed: _checkBiometrics,
                 ),
-                
+
                 const Divider(height: 100),
                 Text('Available biometrics: $_availableBiometrics\n'),
                 ElevatedButton(
                   child: const Text('Get available biometrics'),
                   onPressed: _getAvailableBiometrics,
                 ),
-                
+
                 const Divider(height: 100),
                 Text('Current State: $_authorized\n'),
                 (_isAuthenticating)
